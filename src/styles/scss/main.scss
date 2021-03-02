@@ -1,0 +1,1297 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// ===========================================
+//                   COLORS
+// ===========================================
+
+$black: #2b2b2b;
+$grey: #768773;
+$main-green: #99ca3c;
+$light-green: #f0ffd2;
+
+// ===========================================
+//                   SCREEN
+// ===========================================
+
+$lg: 1440px;
+$md: 1024px;
+$sm: 768px;
+$xs: 640px;
+$xxs: 480px;
+
+// ===========================================
+//                   LAYOUT
+// ===========================================
+
+:root {
+  @media screen and (min-width: $md) {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: $md) {
+    font-size: 16px;
+  }
+
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  background-color: #fff;
+  // overflow-x: hidden;
+}
+
+//      NAV
+// =================
+
+.nav-bar {
+  position: fixed;
+  width: calc(100% - 4rem);
+  left: 0px;
+  top: 0px;
+  padding: 1rem 2rem;
+  font-family: ubuntu;
+  font-size: 1rem;
+  color: $black;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  z-index: 999;
+
+  .nav-logo {
+    img {
+      width: 6rem;
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: $xs) {
+      display: none;
+    }
+
+    .menu-1,
+    .menu-2,
+    .menu-3 {
+      margin: 0 1rem;
+    }
+
+    .menu-btn {
+      margin-left: 1rem;
+      width: 8rem;
+      height: 2.2rem;
+      border-radius: 50px;
+      background-color: $main-green;
+      border: none;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      outline: none;
+      cursor: pointer;
+      font-family: Ubuntu;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1rem;
+      color: $black;
+    }
+
+    .menu-btn:hover {
+      box-shadow: 4px 4px 4px #aaa;
+    }
+
+    .menu-btn:active {
+      transform: translateY(1px);
+      background-color: $light-green;
+      box-shadow: none;
+    }
+  }
+
+  .dropdown {
+    display: none;
+
+    @media screen and (max-width: $xs) {
+      position: relative;
+      display: inline-block;
+
+      .dropdown-btn {
+        svg {
+          width: 1.2rem;
+          height: 1.2rem;
+          fill: $black;
+        }
+      }
+
+      .dropdown-content {
+        display: none;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $main-green;
+        width: 10rem;
+        z-index: 999;
+
+        .menu-1,
+        .menu-2,
+        .menu-3 {
+          color: $light-green;
+          width: calc(100% - 2rem);
+          display: block;
+          text-align: left;
+          padding: 1rem;
+        }
+
+        .drpdwn-hvr:hover {
+          background-color: $grey;
+          cursor: pointer;
+        }
+
+        .drpdwn-hvr:active {
+          background-color: $light-green;
+          color: $main-green;
+        }
+      }
+    }
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+//      CONTENT
+// =================
+
+.container {
+  // background-color: #eee;
+  width: 65%;
+  margin: auto;
+  margin-top: 4rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: $xs) {
+    width: 85%;
+    margin-top: 3rem;
+  }
+}
+
+//    PAGE UTAMA
+// =================
+
+.page-utama {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0 3rem;
+  width: 100%;
+  // background-color: #aaa;
+
+  @media screen and (max-width: $xs) {
+    padding: 1rem 0 2rem;
+  }
+
+  .hero {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    @media screen and (max-width: $sm) {
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-text {
+      width: 23rem;
+      // background-color: #ddd;
+
+      @media screen and (max-width: $sm) {
+        width: 100%;
+        order: 2;
+      }
+
+      .p-grey {
+        margin-top: 1rem;
+      }
+    }
+
+    .hero-logo {
+      width: 60%;
+      margin-right: -15%;
+
+      @media screen and (max-width: $sm) {
+        order: 1;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .form-nitip {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1rem;
+    width: 60%;
+    height: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px #aaa;
+
+    @media screen and (max-width: $xs) {
+      width: 50%;
+      // margin: 2rem;
+    }
+
+    .nitip-input {
+      width: 100%;
+      height: 100%;
+      background: $light-green;
+      border: 2px solid $main-green;
+      box-sizing: border-box;
+      border-radius: 20px 0px 0px 20px;
+      padding: 0 1rem;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 0.9rem;
+      color: $grey;
+      display: flex;
+      align-items: center;
+      outline: none;
+
+      @media screen and (max-width: $xs) {
+        display: none;
+      }
+    }
+
+    .nitip-submit {
+      padding: 0 1.5rem;
+      height: 100%;
+      background: $main-green;
+      border: none;
+      border-radius: 0px 20px 20px 0px;
+      font-family: Ubuntu;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1rem;
+      color: $black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      outline: none;
+
+      @media screen and (max-width: $xs) {
+        width: 100%;
+        border-radius: 20px;
+      }
+    }
+
+    .nitip-submit:hover {
+      background-color: $black;
+      color: $light-green;
+      cursor: pointer;
+    }
+
+    .nitip-submit:active {
+      background: $light-green;
+      color: $black;
+    }
+  }
+}
+
+//    PAGE JADWAL
+// =================
+
+.page-jadwal {
+  width: 100%;
+  padding: 3rem 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  // background-color: #ddd;
+
+  @media screen and (max-width: $xs) {
+    padding: 2rem 0;
+  }
+
+  .jadwal-title {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .jadwal-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .countdown {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      .countdown-text {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        .route {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 0.5rem;
+
+          svg {
+            margin: 0 1rem;
+            width: 1rem;
+            height: 1rem;
+            fill: $black;
+          }
+        }
+      }
+
+      .countdown-timer {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        background-color: $main-green;
+        border-radius: 20px;
+        padding: 1rem;
+
+        @media screen and (max-width: $xs) {
+          // padding: 0.5rem;
+        }
+
+        .unit {
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: center;
+
+          h2 {
+            width: 5rem;
+            margin-bottom: 0.5rem;
+
+            @media screen and (max-width: $xxs) {
+              width: 3.5rem;
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        h4 {
+          margin: -1rem 0.2rem 0;
+        }
+      }
+    }
+
+    .reminder {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
+
+      .reminder-text {
+        margin-bottom: 0.5rem;
+        text-align: center;
+      }
+
+      .reminder-form {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        width: 10rem;
+        height: 2rem;
+
+        .reminder-input {
+          // width: 100%;
+          height: 100%;
+          background: $light-green;
+          border: 2px solid $main-green;
+          box-sizing: border-box;
+          border-radius: 20px 0px 0px 20px;
+          padding: 0 1rem;
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 0.8rem;
+          color: $grey;
+          display: flex;
+          align-items: center;
+          outline: none;
+        }
+
+        .reminder-submit {
+          padding: 0 1rem;
+          height: 100%;
+          background: $main-green;
+          border: none;
+          border-radius: 0px 20px 20px 0px;
+          font-family: Ubuntu;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 0.8rem;
+          color: $black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          outline: none;
+        }
+
+        .reminder-submit:hover {
+          background-color: $black;
+          color: $light-green;
+          cursor: pointer;
+        }
+
+        .reminder-submit:active {
+          background: $light-green;
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+//  PAGE INFORMASI
+// =================
+
+.page-informasi {
+  width: 100%;
+  padding: 3rem 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media screen and (max-width: $sm) {
+    flex-flow: column nowrap;
+  }
+
+  @media screen and (max-width: $xs) {
+    padding: 2rem 0;
+    align-items: center;
+  }
+
+  .terfavorit {
+    width: 14.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: 3rem;
+
+    @media screen and (max-width: $sm) {
+      margin-right: 0;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+
+    @media screen and (max-width: $xs) {
+      align-items: center;
+    }
+
+    .terfavorit-text {
+      margin-bottom: 1rem;
+
+      @media screen and (max-width: $xs) {
+        text-align: center;
+      }
+    }
+
+    .terfavorit-display {
+      display: grid;
+      grid:
+        "1 2"
+        "3 4";
+      column-gap: 0.5rem;
+      row-gap: 0.5rem;
+
+      @media screen and (max-width: $sm) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      @media screen and (max-width: $xs) {
+        justify-content: center;
+      }
+
+      .fav-display {
+        padding: 0.5rem;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px #aaa;
+
+        img {
+          width: 6rem;
+          height: 6rem;
+          margin-bottom: 0.3rem;
+        }
+
+        .nama {
+          width: 6rem;
+          height: 1.875rem;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+
+  .kanan {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    .testimoni {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+
+      @media screen and (max-width: $xs) {
+        align-items: center;
+      }
+
+      h4 {
+        margin-bottom: 1rem;
+      }
+
+      .testimoni-display {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        column-gap: 0.5rem;
+        row-gap: 0.5rem;
+
+        @media screen and (max-width: $xs) {
+          flex-flow: row wrap;
+        }
+
+        @media screen and (max-width: $xxs) {
+          justify-content: center;
+          align-items: center;
+        }
+
+        .test-display {
+          padding: 0.5rem;
+          background-color: $main-green;
+          border: 2px solid $main-green;
+          border-radius: 10px;
+          // box-shadow: 4px 4px 4px #aaa;
+
+          .siapa {
+            margin-bottom: 0.5rem;
+
+            p:nth-child(1) {
+              letter-spacing: 0.5px;
+              font-weight: 700;
+            }
+
+            p:nth-child(2) {
+              letter-spacing: 0.5px;
+              font-weight: 700;
+              color: $light-green;
+            }
+          }
+          .berapa {
+            margin-bottom: 0.5rem;
+          }
+          .bagaimana {
+            width: 11rem;
+            height: 2.825rem;
+          }
+        }
+      }
+    }
+    .prosedur {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: flex-start;
+
+      @media screen and (max-width: $xs) {
+        align-items: center;
+      }
+
+      h4 {
+        margin-bottom: 1rem;
+
+        span {
+          color: $main-green;
+        }
+      }
+
+      .prosedur-konten {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 0.5rem;
+        // border: 2px solid black;
+        width: 100%;
+
+        .konten {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: stretch;
+          column-gap: 0.5rem;
+          width: 100%;
+
+          .bullet {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50px;
+            border: 0.125rem solid $main-green;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+
+            @media screen and (max-width: $xxs) {
+              width: 3rem;
+              height: 3rem;
+            }
+          }
+
+          .text {
+            // width: 100%;
+            height: 2rem;
+            padding: 0rem 1rem;
+            border: 0.125rem solid $main-green;
+            border-radius: 50px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            flex-grow: 100;
+
+            @media screen and (max-width: $xxs) {
+              height: 3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// PAGE TENTANG KAMI
+// =================
+
+.page-tentang-kami {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 3rem 0;
+
+  @media screen and (max-width: $xs) {
+    padding: 2rem 0;
+    align-items: center;
+  }
+
+  h3 {
+    margin-bottom: 2rem;
+  }
+  .tentang-perusahaan {
+    margin-bottom: 2rem;
+
+    img {
+      width: 6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p:nth-child(2) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .tentang-pegawai {
+    h4 {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+    .pegawai-konten {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      @media screen and (max-width: $xs) {
+        flex-flow: column nowrap;
+        align-items: center;
+      }
+
+      img {
+        width: 9rem;
+        margin-right: 1.5rem;
+
+        @media screen and (max-width: $xs) {
+          margin-right: 0;
+          margin-bottom: 1.5rem;
+        }
+      }
+      .pegawai-text {
+        h5 {
+          margin-bottom: 0.5rem;
+        }
+        p:nth-child(2) {
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+// PAGE KENAPA KAMI
+// =================
+
+.page-kenapa-kami {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 3rem 0;
+
+  @media screen and (max-width: $xs) {
+    padding: 2rem 0;
+    align-items: center;
+  }
+
+  h3 {
+    margin-bottom: 2rem;
+
+    span {
+      color: $main-green;
+    }
+  }
+  .kenapa-konten {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+
+    @media screen and (max-width: $sm) {
+      flex-flow: column nowrap;
+      row-gap: 2rem;
+    }
+
+    .point {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      width: 13rem;
+
+      .gambar {
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        background-color: $light-green;
+        margin-bottom: 1rem;
+
+        svg {
+          width: 2rem;
+          height: 2rem;
+          fill: $main-green;
+        }
+      }
+
+      h5 {
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+// PAGE AREA PELAYANAN
+// =================
+
+.page-area {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 3rem 0;
+  row-gap: 2rem;
+
+  @media screen and (max-width: $xs) {
+    padding: 2rem 0;
+    row-gap: 1rem;
+  }
+
+  .konten {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 2rem;
+
+    @media screen and (max-width: $xs) {
+      flex-flow: column nowrap;
+    }
+
+    img {
+      height: 13rem;
+
+      @media screen and (max-width: $xs) {
+        height: 9rem;
+      }
+    }
+
+    .area-text {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      row-gap: 1.5rem;
+
+      .point {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        column-gap: 1.5rem;
+
+        .kiri,
+        .kanan {
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          row-gap: 0.5rem;
+        }
+
+        p {
+          width: 8rem;
+
+          @media screen and (max-width: $xs) {
+            font-size: 0.8rem;
+            width: 6rem;
+          }
+        }
+      }
+    }
+  }
+
+  .area-jakarta {
+    img {
+      order: 2;
+
+      @media screen and (max-width: $xs) {
+        order: 1;
+      }
+    }
+
+    .area-text {
+      order: 1;
+      justify-content: flex-start;
+      align-items: flex-end;
+
+      @media screen and (max-width: $xs) {
+        order: 2;
+      }
+
+      .point {
+        text-align: right;
+      }
+    }
+  }
+}
+
+//      FOOTER
+// =================
+
+.footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: $main-green;
+  padding: 2rem 2rem;
+
+  @media screen and (max-width: $xs) {
+    row-gap: 1rem;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .kontak {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 0.5rem;
+
+    @media screen and (max-width: $xs) {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .konten {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      column-gap: 2rem;
+
+      .kiri {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 0.3rem;
+      }
+      .kanan {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 0.3rem;
+      }
+    }
+  }
+
+  .media-sosial {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 0.5rem;
+
+    @media screen and (max-width: $xs) {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .instagram {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      column-gap: 0.5rem;
+
+      svg {
+        width: 1rem;
+        height: 1rem;
+      }
+      a:hover {
+        color: $grey;
+      }
+    }
+  }
+
+  @media screen and (max-width: $xs) {
+    .media-sosial::after {
+      content: "";
+      height: 1px;
+      width: 15rem;
+      background-color: $black;
+      margin-top: 1rem;
+    }
+  }
+
+  .pranala-luar {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    row-gap: 0.5rem;
+
+    @media screen and (max-width: $xs) {
+      align-self: center;
+      align-items: center;
+    }
+
+    a:hover {
+      color: $grey;
+    }
+  }
+}
+
+// ===========================================
+//                 TYPOGRAPHY
+// ===========================================
+
+h1,
+.h1 {
+  font: 700 3rem ubuntu;
+  color: $black;
+
+  @media (max-width: $xxs) {
+    font-size: 2.4rem;
+  }
+}
+
+h2,
+.h2 {
+  font: 700 2.4rem ubuntu;
+  color: $black;
+
+  @media (max-width: $xxs) {
+    font-size: 2rem;
+  }
+}
+
+h3,
+.h3 {
+  font: 700 2rem ubuntu;
+  color: $black;
+
+  @media (max-width: $xxs) {
+    font-size: 1.6rem;
+  }
+}
+
+h4,
+.h4 {
+  font: 700 1.6rem ubuntu;
+  color: $black;
+
+  @media (max-width: $xxs) {
+    font-size: 1.2rem;
+  }
+}
+
+h5,
+.h5 {
+  font: 700 1.2rem ubuntu;
+  color: $black;
+
+  @media (max-width: $xxs) {
+    font-size: 1rem;
+  }
+}
+
+.p-grey {
+  font: normal 1rem roboto;
+  color: $grey;
+}
+
+.p-black {
+  font: normal 1rem roboto;
+  color: $black;
+}
+
+.sub-p-grey {
+  font: normal 0.8rem roboto;
+  color: $grey;
+}
+
+.sub-p-black {
+  font: normal 0.8rem roboto;
+  color: $black;
+}
+
+// ===========================================
+//                 LINKS
+// ===========================================
+
+a:link {
+  text-decoration: none;
+  color: $black;
+}
+
+a:visited {
+  text-decoration: none;
+  color: $black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $main-green;
+}
+
+a:active {
+  text-decoration: none;
+  color: $light-green;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -3.5rem;
+  visibility: hidden;
+}
