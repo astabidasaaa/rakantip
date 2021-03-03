@@ -2,9 +2,10 @@ import logo from "../assets/img/logo-rakantip.svg";
 // import "./App.css";
 
 function Navbar() {
-  const handleClick = () => {
-    console.log("aaa");
-  };
+  function on() {
+    document.getElementById("overlay").style.display = "flex";
+    document.body.classList.toggle("noscroll", true);
+  }
 
   return (
     <div className="nav-bar">
@@ -25,7 +26,7 @@ function Navbar() {
           type="button"
           className="menu-btn"
           value="Ayo Nitip"
-          onClick={handleClick}
+          onClick={on}
         >
           Ayo Nitip
         </button>

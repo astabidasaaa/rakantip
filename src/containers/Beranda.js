@@ -2,6 +2,11 @@ import logo from "../assets/img/logo-rakantip-polos-01.png";
 // import "./App.css";
 
 function Beranda() {
+  function on() {
+    document.getElementById("overlay").style.display = "flex";
+    document.body.classList.toggle("noscroll", true);
+  }
+
   return (
     <div className="page-utama">
       <a className="anchor" id="page-utama" href="#"></a>
@@ -25,7 +30,9 @@ function Beranda() {
           className="nitip-input"
           placeholder="ex: https://www.instagram.com/p/CKu-SddBGtK/"
         />
-        <input type="submit" value="Nitip dong" className="nitip-submit" />
+        <button className="nitip-submit" onClick={on} value="">
+          Nitip dong
+        </button>
       </form>
     </div>
   );

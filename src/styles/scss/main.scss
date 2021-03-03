@@ -159,6 +159,7 @@ $xxs: 480px;
 }
 
 body {
+  box-sizing: border-box;
   width: 100%;
   background-color: #fff;
   // overflow-x: hidden;
@@ -169,7 +170,8 @@ body {
 
 .nav-bar {
   position: fixed;
-  width: calc(100% - 4rem);
+  box-sizing: border-box;
+  width: 100%;
   left: 0px;
   top: 0px;
   padding: 1rem 2rem;
@@ -181,7 +183,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  z-index: 999;
+  z-index: 99;
 
   .nav-logo {
     img {
@@ -268,7 +270,8 @@ body {
         .menu-2,
         .menu-3 {
           color: $light-green;
-          width: calc(100% - 2rem);
+          width: 100%;
+          box-sizing: border-box;
           display: block;
           text-align: left;
           padding: 1rem;
@@ -424,10 +427,12 @@ body {
       font-size: 1rem;
       color: $black;
       display: flex;
+      flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
       text-align: center;
       outline: none;
+      white-space: nowrap;
 
       @media screen and (max-width: $xs) {
         width: 100%;
@@ -842,6 +847,10 @@ body {
       }
     }
   }
+
+  .checked {
+    color: yellow;
+  }
 }
 
 // PAGE TENTANG KAMI
@@ -893,8 +902,13 @@ body {
       }
 
       img {
-        width: 9rem;
-        margin-right: 1.5rem;
+        width: 15rem;
+        margin-right: 3rem;
+
+        @media screen and (max-width: $sm) {
+          width: 9rem;
+          margin-right: 2rem;
+        }
 
         @media screen and (max-width: $xs) {
           margin-right: 0;
@@ -1191,6 +1205,147 @@ body {
   }
 }
 
+//   FORM OVERLAY
+// =================
+
+#overlay {
+  position: fixed;
+  display: none;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 3rem 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  overflow-y: scroll;
+
+  .form-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 36rem;
+    padding: 2rem;
+    border-radius: 30px;
+    row-gap: 2rem;
+
+    @media screen and (max-width: $xs) {
+      width: 90%;
+    }
+
+    .form {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      row-gap: 1rem;
+      width: 90%;
+
+      .pertanyaan {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 0.5rem;
+        width: 100%;
+
+        label {
+          font-family: ubuntu;
+        }
+
+        input {
+          width: 100%;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          border: none;
+          outline: none;
+        }
+
+        hr {
+          height: 0.08px;
+          width: 100%;
+          background-color: $black;
+          border: none;
+          margin: -0.3rem 0 0.5rem 0;
+          box-shadow: 5px 5px 5px #aaa;
+        }
+      }
+
+      .form-submit {
+        padding: 0 1.5rem;
+        width: 100%;
+        max-width: 15rem;
+        height: 3rem;
+        background: $main-green;
+        border: none;
+        border-radius: 50px;
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1rem;
+        color: $black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        outline: none;
+      }
+
+      .form-submit:hover {
+        background-color: $black;
+        color: $light-green;
+        cursor: pointer;
+      }
+
+      .form-submit:active {
+        background: $light-green;
+        color: $black;
+      }
+    }
+
+    .close-btn {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      align-self: flex-end;
+      background-color: #fff;
+      width: 3rem;
+      height: 3rem;
+      position: relative;
+      margin-bottom: -4.5rem;
+      right: -3rem;
+      top: -3rem;
+      border-radius: 100px;
+      cursor: pointer;
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: $black;
+        border-radius: 20px solid $black;
+      }
+    }
+  }
+}
+
+.noscroll {
+  overflow: hidden;
+  padding-right: 1rem;
+
+  @media screen and (max-width: $sm) {
+    padding-right: 0;
+  }
+}
+
 // ===========================================
 //                 TYPOGRAPHY
 // ===========================================
@@ -1292,6 +1447,6 @@ a:active {
 a.anchor {
   display: block;
   position: relative;
-  top: -3.5rem;
+  top: -4.5rem;
   visibility: hidden;
 }

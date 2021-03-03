@@ -1,12 +1,10 @@
-// import logo from "../assets/img/logo-rakantip-polos-01.png";
-// import "./App.css";
 import { terfavorit } from "../entry";
 
 function Informasi() {
   const Favorit = () => {
     return terfavorit.map((favObj, i, favArr) => {
       return (
-        <div className="fav-display" key={favArr[i].urutan}>
+        <div className="fav-display" key={favArr[i].id}>
           <img src={favArr[i].src} alt={favArr[i].alt} />
           <div className="nama">
             <p className="sub-p-grey">{favArr[i].nama}</p>
@@ -24,30 +22,6 @@ function Informasi() {
         </div>
         <div className="terfavorit-display">
           <Favorit />
-          {/* <div className="fav-display">
-            <img src="../assets/img/dimsum.jpg" alt="" />
-            <div className="nama">
-              <p className="sub-p-grey">Dimsum Arsyif</p>
-            </div>
-          </div>
-          <div className="fav-display">
-            <img src="../assets/img/hipikicin.jpg" alt="" />
-            <div className="nama">
-              <p className="sub-p-grey">HIPIKIC.IN</p>
-            </div>
-          </div>
-          <div className="fav-display">
-            <img src="../assets/img/Sei-sapi.jpg" alt="" />
-            <div className="nama">
-              <p className="sub-p-grey">Sei Sapi Lamalera</p>
-            </div>
-          </div>
-          <div className="fav-display">
-            <img src="../assets/img/dimsum.jpg" alt="" />
-            <div className="nama">
-              <p className="sub-p-grey">Dimsum Arsyif</p>
-            </div>
-          </div> */}
         </div>
       </div>
       <div className="kanan">
@@ -59,7 +33,13 @@ function Informasi() {
                 <p className="sub-p-black">Sangkara</p>
                 <p className="sub-p-grey">Warga Bandung</p>
               </div>
-              <div className="berapa">*****</div>
+              <div className="berapa">
+                <span className="fa fa-star checked"></span>
+                <span className="fa fa-star checked"></span>
+                <span className="fa fa-star checked"></span>
+                <span className="fa fa-star"></span>
+                <span className="fa fa-star"></span>
+              </div>
               <p className="bagaimana sub-p-black">
                 Pelayanan sangat ramah, asyik, dan cepat! sukses terus
                 Rakan.tip!
@@ -70,7 +50,13 @@ function Informasi() {
                 <p className="sub-p-black">Sangkara</p>
                 <p className="sub-p-grey">Warga Bandung</p>
               </div>
-              <div className="berapa">*****</div>
+              <div className="berapa">
+                <span className="fa fa-star checked"></span>
+                <span className="fa fa-star checked"></span>
+                <span className="fa fa-star checked"></span>
+                <span className="fa fa-star checked"></span>
+                <span className="fa fa-star"></span>
+              </div>
               <p className="bagaimana sub-p-black">
                 Pelayanan sangat ramah, asyik, dan cepat! sukses terus
                 Rakan.tip!

@@ -1,20 +1,25 @@
-// import logo from "./logo.svg";
-// import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Beranda from "./containers/Beranda";
 import Jadwal from "./containers/Jadwal";
 import Informasi from "./containers/Informasi";
-import { test } from "./entry";
+import Tentang from "./containers/Tentang";
+import Kenapa from "./containers/Kenapa";
+import Area from "./containers/Area";
+import Form from "./containers/Form";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <div className="container">
+        <Form />
         <Beranda />
-        <Jadwal a={test} />
+        <Jadwal />
         <Informasi />
+        <Tentang />
+        <Kenapa />
+        <Area />
       </div>
 
       <Footer />
