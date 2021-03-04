@@ -5,6 +5,7 @@ function Beranda() {
   function on() {
     document.getElementById("overlay").style.display = "flex";
     document.body.classList.toggle("noscroll", true);
+    document.getElementById("nav-bar").classList.toggle("pad-right", true);
   }
 
   return (

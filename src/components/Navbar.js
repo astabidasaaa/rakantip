@@ -5,10 +5,11 @@ function Navbar() {
   function on() {
     document.getElementById("overlay").style.display = "flex";
     document.body.classList.toggle("noscroll", true);
+    document.getElementById("nav-bar").classList.toggle("pad-right", true);
   }
 
   return (
-    <div className="nav-bar">
+    <div className="nav-bar" id="nav-bar">
       <div className="nav-logo">
         <img src={logo} alt="Logo rakan.tip" />
       </div>

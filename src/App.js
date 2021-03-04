@@ -6,7 +6,10 @@ import Informasi from "./containers/Informasi";
 import Tentang from "./containers/Tentang";
 import Kenapa from "./containers/Kenapa";
 import Area from "./containers/Area";
+// import Test from "./containers/Test";
 import Form from "./containers/Form";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (
@@ -20,6 +23,7 @@ function App() {
         <Tentang />
         <Kenapa />
         <Area />
+        {/* <Test /> */}
       </div>
 
       <Footer />

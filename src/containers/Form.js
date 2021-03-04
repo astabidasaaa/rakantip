@@ -2,6 +2,7 @@ function Form() {
   function off() {
     document.getElementById("overlay").style.display = "none";
     document.body.classList.toggle("noscroll", false);
+    document.getElementById("nav-bar").classList.toggle("pad-right", false);
   }
 
   return (

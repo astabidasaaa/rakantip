@@ -1,7 +1,7 @@
 import { terfavorit } from "../entry";
 import Slider from "react-slick";
 
-function Informasi() {
+function Test() {
   const Favorit = () => {
     return terfavorit.map((favObj, i, favArr) => {
       return (
@@ -202,4 +202,4 @@ function Informasi() {
   );
 }
 
-export default Informasi;
+export default Test;
