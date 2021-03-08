@@ -773,6 +773,7 @@ body {
               flex-flow: column nowrap;
               justify-content: flex-start;
               align-items: flex-start;
+              box-sizing: border-box;
               padding: 0.5rem;
               background-color: $main-green;
               border-radius: 10px;
@@ -795,6 +796,10 @@ body {
                 margin-bottom: 0.5rem;
               }
               .bagaimana {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: flex-start;
                 width: 11rem;
                 height: 2.825rem;
               }
@@ -1303,6 +1308,36 @@ body {
           margin: -0.3rem 0 0.5rem 0;
           box-shadow: 5px 5px 5px #aaa;
         }
+
+        .nitip-container {
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          box-sizing: border-box;
+          row-gap: 0.5rem;
+          width: 100%;
+          padding: 1rem;
+          border: 1px solid $grey;
+          border-radius: 20px;
+        }
+
+        .tambah-nitip {
+          display: block;
+          padding: 1rem;
+          width: 30%;
+          min-width: 7.5rem;
+          text-align: center;
+          background-color: #fff;
+          border: 1px solid $grey;
+          border-radius: 20px;
+
+          &:hover {
+            cursor: pointer;
+            border: 1px solid $black;
+            color: $black;
+          }
+        }
       }
 
       .form-submit {
@@ -1457,29 +1492,27 @@ h5,
 //                 LINKS
 // ===========================================
 
-a:link {
-  text-decoration: none;
-  color: $black;
-}
-
-a:visited {
-  text-decoration: none;
-  color: $black;
-}
-
-a:hover {
-  text-decoration: none;
-  color: $main-green;
-}
-
-a:active {
-  text-decoration: none;
-  color: $light-green;
-}
-
-a.anchor {
-  display: block;
-  position: relative;
-  top: -4.5rem;
-  visibility: hidden;
+a {
+  &:link {
+    text-decoration: none;
+    color: $black;
+  }
+  &:visited {
+    text-decoration: none;
+    color: $black;
+  }
+  &:hover {
+    text-decoration: none;
+    color: $main-green;
+  }
+  &:active {
+    text-decoration: none;
+    color: $light-green;
+  }
+  &.anchor {
+    display: block;
+    position: relative;
+    top: -4.5rem;
+    visibility: hidden;
+  }
 }

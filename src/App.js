@@ -10,13 +10,22 @@ import Area from "./containers/Area";
 import Form from "./containers/Form";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useState, useEffect } from "react";
 
 function App() {
+  const nitipApa = { nitip: "", catatan: "" };
+  const [nitipState, setNitipState] = useState([{ ...nitipApa }]);
+  const [yangNitip, setYangNitip] = useState({});
+
+  const addNitip = () => {
+    setNitipState([...nitipState, { ...nitipApa }]);
+  };
+
   return (
     <div className="App">
       <Navbar />
       <div className="container">
-        <Form />
+        <Form nitipState={nitipState} addNitip={addNitip} />
         <Beranda />
         <Jadwal />
         <Informasi />

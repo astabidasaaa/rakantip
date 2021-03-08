@@ -1,4 +1,4 @@
-function Form() {
+function Form({ nitipState, addNitip }) {
   function off() {
     document.getElementById("overlay").style.display = "none";
     document.body.classList.toggle("noscroll", false);
@@ -24,22 +24,56 @@ function Form() {
               id="nama"
               name="nama"
               className="sub-p-grey"
+              value="text"
               placeholder="ex: Rakanda Pranidhana"
             />
             <hr />
           </div>
           <div className="pertanyaan">
-            <label htmlFor="nitip" className="p-black">
-              Nitip apa?
-            </label>
+            <p className="p-black">Nitip apa?</p>
+            {nitipState.map((val, idx) => {
+              const nitipId = `nitip-${idx}`;
+              const catatanId = `catatan-${idx}`;
+              return (
+                <div key={`nitip-${idx}`} className="nitip-container">
+                  <div className="pertanyaan">
+                    <label className="sub-p-black" htmlFor={nitipId}>{`Nitip #${
+                      idx + 1
+                    }`}</label>
+                    <input
+                      type="text"
+                      name={nitipId}
+                      data-idx={idx}
+                      id={nitipId}
+                      className="nitip sub-p-grey"
+                      placeholder="ex: https://www.instagram.com/p/CKu-SddBGtK/"
+                    />
+                    <hr />
+                  </div>
+
+                  <div className="pertanyaan">
+                    <label className="sub-p-black" htmlFor={catatanId}>
+                      Catatan penitipan
+                    </label>
+                    <input
+                      type="text"
+                      name={catatanId}
+                      data-idx={idx}
+                      id={catatanId}
+                      className="catatan-nitip sub-p-grey"
+                      placeholder="ex: Nitip 5 buah, gak pedes, gak pake bakso"
+                    />
+                    <hr />
+                  </div>
+                </div>
+              );
+            })}
             <input
-              type="text"
-              id="nitip"
-              name="nitip"
-              className="sub-p-grey"
-              placeholder="ex: https://www.instagram.com/p/CKu-SddBGtK/"
+              className="tambah-nitip sub-p-grey"
+              type="button"
+              value="+ Tambah nitip"
+              onClick={addNitip}
             />
-            <hr />
           </div>
           <div className="pertanyaan">
             <label htmlFor="kemana" className="p-black">

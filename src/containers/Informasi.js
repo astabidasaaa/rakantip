@@ -1,4 +1,4 @@
-import { terfavorit } from "../entry";
+import { terfavorit, testimoni } from "../entry";
 import Slider from "react-slick";
 
 function Informasi() {
@@ -13,6 +13,36 @@ function Informasi() {
         </div>
       );
     });
+  };
+
+  const Testimoni = ({ nama, sebagai, bintang, komentar }) => {
+    function berapa(bintang) {
+      let a = [];
+      for (let i = 1; i <= 5; i++) {
+        if (i <= bintang) {
+          a.push(<span key={nama + i} className="fa fa-star checked"></span>);
+        }
+
+        if (i > bintang) {
+          a.push(<span key={nama + i} className="fa fa-star"></span>);
+        }
+      }
+
+      return a;
+    }
+
+    return (
+      <div className="test-display">
+        <div className="siapa">
+          <p className="sub-p-black">{nama}</p>
+          <p className="sub-p-grey">{sebagai}</p>
+        </div>
+        <div className="berapa">{berapa(bintang)}</div>
+        <div className="bagaimana">
+          <p className="sub-p-black">{komentar}</p>
+        </div>
+      </div>
+    );
   };
 
   const settings = {
@@ -42,112 +72,46 @@ function Informasi() {
           <div className="test-slider">
             <Slider {...settings}>
               <div className="testimoni-display">
-                <div className="test-display">
-                  <div className="siapa">
-                    <p className="sub-p-black">Sangkara</p>
-                    <p className="sub-p-grey">Warga Bandung</p>
-                  </div>
-                  <div className="berapa">
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star"></span>
-                    <span className="fa fa-star"></span>
-                  </div>
-                  <p className="bagaimana sub-p-black">
-                    Pelayanan sangat ramah, asyik, dan cepat! sukses terus
-                    Rakan.tip!
-                  </p>
-                </div>
-                <div className="test-display">
-                  <div className="siapa">
-                    <p className="sub-p-black">Sangkara</p>
-                    <p className="sub-p-grey">Warga Bandung</p>
-                  </div>
-                  <div className="berapa">
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star"></span>
-                  </div>
-                  <p className="bagaimana sub-p-black">
-                    Pelayanan sangat ramah, asyik, dan cepat! sukses terus
-                    Rakan.tip!
-                  </p>
-                </div>
+                <Testimoni
+                  nama={testimoni[0].nama}
+                  sebagai={testimoni[0].sebagai}
+                  bintang={testimoni[0].bintang}
+                  komentar={testimoni[0].komentar}
+                />
+                <Testimoni
+                  nama={testimoni[1].nama}
+                  sebagai={testimoni[1].sebagai}
+                  bintang={testimoni[1].bintang}
+                  komentar={testimoni[1].komentar}
+                />
               </div>
               <div className="testimoni-display">
-                <div className="test-display">
-                  <div className="siapa">
-                    <p className="sub-p-black">Sangkara</p>
-                    <p className="sub-p-grey">Warga Bandung</p>
-                  </div>
-                  <div className="berapa">
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star"></span>
-                    <span className="fa fa-star"></span>
-                  </div>
-                  <p className="bagaimana sub-p-black">
-                    Pelayanan sangat ramah, asyik, dan cepat! sukses terus
-                    Rakan.tip!
-                  </p>
-                </div>
-                <div className="test-display">
-                  <div className="siapa">
-                    <p className="sub-p-black">Sangkara</p>
-                    <p className="sub-p-grey">Warga Bandung</p>
-                  </div>
-                  <div className="berapa">
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star"></span>
-                  </div>
-                  <p className="bagaimana sub-p-black">
-                    Pelayanan sangat ramah, asyik, dan cepat! sukses terus
-                    Rakan.tip!
-                  </p>
-                </div>
+                <Testimoni
+                  nama={testimoni[2].nama}
+                  sebagai={testimoni[2].sebagai}
+                  bintang={testimoni[2].bintang}
+                  komentar={testimoni[2].komentar}
+                />
+                <Testimoni
+                  nama={testimoni[3].nama}
+                  sebagai={testimoni[3].sebagai}
+                  bintang={testimoni[3].bintang}
+                  komentar={testimoni[3].komentar}
+                />
               </div>
               <div className="testimoni-display">
-                <div className="test-display">
-                  <div className="siapa">
-                    <p className="sub-p-black">Sangkara</p>
-                    <p className="sub-p-grey">Warga Bandung</p>
-                  </div>
-                  <div className="berapa">
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star"></span>
-                    <span className="fa fa-star"></span>
-                  </div>
-                  <p className="bagaimana sub-p-black">
-                    Pelayanan sangat ramah, asyik, dan cepat! sukses terus
-                    Rakan.tip!
-                  </p>
-                </div>
-                <div className="test-display">
-                  <div className="siapa">
-                    <p className="sub-p-black">Sangkara</p>
-                    <p className="sub-p-grey">Warga Bandung</p>
-                  </div>
-                  <div className="berapa">
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star checked"></span>
-                    <span className="fa fa-star"></span>
-                  </div>
-                  <p className="bagaimana sub-p-black">
-                    Pelayanan sangat ramah, asyik, dan cepat! sukses terus
-                    Rakan.tip!
-                  </p>
-                </div>
+                <Testimoni
+                  nama={testimoni[4].nama}
+                  sebagai={testimoni[4].sebagai}
+                  bintang={testimoni[4].bintang}
+                  komentar={testimoni[4].komentar}
+                />
+                <Testimoni
+                  nama={testimoni[5].nama}
+                  sebagai={testimoni[5].sebagai}
+                  bintang={testimoni[5].bintang}
+                  komentar={testimoni[5].komentar}
+                />
               </div>
             </Slider>
           </div>

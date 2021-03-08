@@ -38,3 +38,49 @@ export const terfavorit = [
     alt: "Dimsum Arsyif",
   },
 ];
+
+export const testimoni = [
+  {
+    id: 1,
+    nama: "Sangkara",
+    sebagai: "Warga Bandung",
+    bintang: 5,
+    komentar:
+      "Pelayanan sangat ramah, asyik, dan cepat! sukses terus Rakan.tip!",
+  },
+  {
+    id: 2,
+    nama: "Naufal",
+    sebagai: "Warga Bandung",
+    bintang: 3,
+    komentar: "keren juga rakantip",
+  },
+  {
+    id: 3,
+    nama: "Faiz",
+    sebagai: "Pegawai",
+    bintang: 1,
+    komentar: "jelek",
+  },
+  {
+    id: 4,
+    nama: "Jum",
+    sebagai: "Pegawai",
+    bintang: 5,
+    komentar: "asik kanda waw",
+  },
+  {
+    id: 5,
+    nama: "Alex",
+    sebagai: "Pedagang",
+    bintang: 4,
+    komentar: "pengiriman cepat, kanda ramah, kurir teladan",
+  },
+  {
+    id: 6,
+    nama: "Iqbal",
+    sebagai: "Atlet",
+    bintang: 3,
+    komentar: "woi kan",
+  },
+];
