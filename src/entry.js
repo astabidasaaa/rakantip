@@ -84,3 +84,22 @@ export const testimoni = [
     komentar: "woi kan",
   },
 ];
+
+export const formState = {
+  nama: "",
+  kemana: "",
+  catKemana: "",
+  ponsel: "",
+};
+
+export const formPlaceholder = {
+  nama: "ex: Rakanda Pranidhana",
+  kemana: "ex: Jalan Buah Batu 123, Bandung",
+  catKemana: "ex: Depan sekolahan, jangan lewat jl abc karena diportal",
+  ponsel: "ex: 0812345678910",
+};
+
+export const nitipPlaceholder = {
+  nitip: "ex: https://www.instagram.com/p/CKu-SddBGtK/",
+  catatan: "ex: Nitip 5 buah, gak pedes, gak pake bakso",
+};

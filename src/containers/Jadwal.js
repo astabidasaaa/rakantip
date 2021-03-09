@@ -2,7 +2,7 @@
 // import "./App.css";
 import { jadwal } from "../entry";
 
-function Jadwal() {
+function Jadwal({ reminderState, handleReminderChange, handleReminderSubmit }) {
   const countDownDate = new Date(jadwal.countdown).getTime();
 
   // Update the count down every 1 second
@@ -80,13 +80,16 @@ function Jadwal() {
           <p className="reminder-text sub-p-grey">
             Dapatkan notifikasi saat kami akan membuka penitipan!
           </p>
-          <form className="reminder-form" action="#">
+          <form className="reminder-form" onSubmit={handleReminderSubmit}>
             <input
-              type="text"
+              type="email"
               id="reminder-input"
               name="reminder-input"
               className="reminder-input"
-              value="Masukkan e-mail kamu"
+              placeholder="masukkan email kamu"
+              value={reminderState}
+              onChange={handleReminderChange}
+              required
             />
             <input type="submit" value="Ingatkan" className="reminder-submit" />
           </form>

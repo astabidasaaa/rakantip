@@ -755,6 +755,7 @@ body {
             align-items: flex-start;
             column-gap: 0.5rem;
             row-gap: 0.5rem;
+            outline: none;
 
             @media screen and (max-width: $xs) {
               width: 10rem;
@@ -1331,6 +1332,7 @@ body {
           background-color: #fff;
           border: 1px solid $grey;
           border-radius: 20px;
+          outline: none;
 
           &:hover {
             cursor: pointer;
@@ -1386,13 +1388,20 @@ body {
       right: -3rem;
       top: -3rem;
       border-radius: 100px;
-      cursor: pointer;
 
       svg {
         width: 1.5rem;
         height: 1.5rem;
         fill: $black;
         border-radius: 20px solid $black;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        svg {
+          fill: $main-green;
+        }
       }
     }
   }
@@ -1478,11 +1487,13 @@ h5,
   color: $black;
 }
 
+#sub-p-grey,
 .sub-p-grey {
   font: normal 0.8rem roboto;
   color: $grey;
 }
 
+#sub-p-black,
 .sub-p-black {
   font: normal 0.8rem roboto;
   color: $black;

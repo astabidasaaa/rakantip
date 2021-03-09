@@ -1,13 +1,7 @@
 import logo from "../assets/img/logo-rakantip.svg";
 // import "./App.css";
 
-function Navbar() {
-  function on() {
-    document.getElementById("overlay").style.display = "flex";
-    document.body.classList.toggle("noscroll", true);
-    document.getElementById("nav-bar").classList.toggle("pad-right", true);
-  }
-
+function Navbar({ overlayOn }) {
   return (
     <div className="nav-bar" id="nav-bar">
       <div className="nav-logo">
@@ -27,7 +21,7 @@ function Navbar() {
           type="button"
           className="menu-btn"
           value="Ayo Nitip"
-          onClick={on}
+          onClick={overlayOn}
         >
           Ayo Nitip
         </button>

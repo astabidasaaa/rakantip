@@ -1,20 +1,24 @@
-function Form({ nitipState, addNitip }) {
-  function off() {
-    document.getElementById("overlay").style.display = "none";
-    document.body.classList.toggle("noscroll", false);
-    document.getElementById("nav-bar").classList.toggle("pad-right", false);
-  }
+import { formPlaceholder, nitipPlaceholder } from "../entry";
 
+function Form({
+  yangNitipState,
+  handleYangNitipChange,
+  nitipState,
+  handleNitipChange,
+  addNitip,
+  handleNitipSubmit,
+  overlayOff,
+}) {
   return (
     <div id="overlay">
       <div className="form-container">
-        <div className="close-btn" onClick={off}>
+        <div className="close-btn" onClick={overlayOff}>
           <svg>
             <use xlinkHref="#close-btn" />
           </svg>
         </div>
         <h3>Formulir penitipan di rakan.tip</h3>
-        <form className="form">
+        <form className="form" onSubmit={handleNitipSubmit}>
           <div className="pertanyaan">
             <label htmlFor="nama" className="p-black">
               Nama lengkap kamu
@@ -24,8 +28,11 @@ function Form({ nitipState, addNitip }) {
               id="nama"
               name="nama"
               className="sub-p-grey"
-              value="text"
-              placeholder="ex: Rakanda Pranidhana"
+              value={yangNitipState.nama}
+              placeholder={formPlaceholder.nama}
+              onChange={handleYangNitipChange}
+              autoComplete="off"
+              required
             />
             <hr />
           </div>
@@ -46,7 +53,12 @@ function Form({ nitipState, addNitip }) {
                       data-idx={idx}
                       id={nitipId}
                       className="nitip sub-p-grey"
-                      placeholder="ex: https://www.instagram.com/p/CKu-SddBGtK/"
+                      value={nitipState[idx].nitip}
+                      placeholder={nitipPlaceholder.nitip}
+                      onChange={handleNitipChange}
+                      alt="nitip"
+                      autoComplete="off"
+                      required
                     />
                     <hr />
                   </div>
@@ -60,20 +72,25 @@ function Form({ nitipState, addNitip }) {
                       name={catatanId}
                       data-idx={idx}
                       id={catatanId}
-                      className="catatan-nitip sub-p-grey"
-                      placeholder="ex: Nitip 5 buah, gak pedes, gak pake bakso"
+                      className="catatan sub-p-grey"
+                      value={nitipState[idx].catatan}
+                      placeholder={nitipPlaceholder.catatan}
+                      onChange={handleNitipChange}
+                      alt="catatan"
+                      autoComplete="off"
                     />
                     <hr />
                   </div>
                 </div>
               );
             })}
-            <input
+            <button
               className="tambah-nitip sub-p-grey"
               type="button"
-              value="+ Tambah nitip"
               onClick={addNitip}
-            />
+            >
+              + Tambah nitip
+            </button>
           </div>
           <div className="pertanyaan">
             <label htmlFor="kemana" className="p-black">
@@ -84,7 +101,11 @@ function Form({ nitipState, addNitip }) {
               id="kemana"
               name="kemana"
               className="sub-p-grey"
-              placeholder="ex: Jalan Buah Batu 123, Bandung"
+              value={yangNitipState.kemana}
+              placeholder={formPlaceholder.kemana}
+              onChange={handleYangNitipChange}
+              autoComplete="off"
+              required
             />
             <hr />
           </div>
@@ -94,10 +115,13 @@ function Form({ nitipState, addNitip }) {
             </label>
             <input
               type="text"
-              id="cat-kemana"
-              name="cat-kemana"
+              id="catKemana"
+              name="catKemana"
               className="sub-p-grey"
-              placeholder="ex: Depan sekolahan, jangan lewat jl abc karena diportal"
+              value={yangNitipState.catKemana}
+              placeholder={formPlaceholder.catKemana}
+              onChange={handleYangNitipChange}
+              autoComplete="off"
             />
             <hr />
           </div>
@@ -106,15 +130,21 @@ function Form({ nitipState, addNitip }) {
               Nomor ponsel kamu
             </label>
             <input
-              type="text"
+              type="number"
               id="ponsel"
               name="ponsel"
               className="sub-p-grey"
-              placeholder="ex: 0812345678910"
+              value={yangNitipState.ponsel}
+              placeholder={formPlaceholder.ponsel}
+              onChange={handleYangNitipChange}
+              autoComplete="off"
+              required
             />
             <hr />
           </div>
-          <input type="submit" value="Nitip sekarang" className="form-submit" />
+          <button type="submit" className="form-submit">
+            Nitip sekarang
+          </button>
         </form>
       </div>
     </div>

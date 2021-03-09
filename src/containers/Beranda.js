@@ -1,13 +1,8 @@
 import logo from "../assets/img/logo-rakantip-polos-01.png";
+import { nitipPlaceholder } from "../entry";
 // import "./App.css";
 
-function Beranda() {
-  function on() {
-    document.getElementById("overlay").style.display = "flex";
-    document.body.classList.toggle("noscroll", true);
-    document.getElementById("nav-bar").classList.toggle("pad-right", true);
-  }
-
+function Beranda({ overlayOn, nitipState, handleNitipChange }) {
   return (
     <div className="page-utama">
       <a className="anchor" id="page-utama" href="#"></a>
@@ -23,18 +18,23 @@ function Beranda() {
           <img src={logo} alt="Logo rakan.tip" />
         </div>
       </div>
-      <form className="form-nitip" action="#">
+      <div className="form-nitip">
         <input
           type="text"
           id="nitip-input"
-          name="nitip-input"
+          name="nitip-0"
           className="nitip-input"
-          placeholder="ex: https://www.instagram.com/p/CKu-SddBGtK/"
+          data-idx="0"
+          alt="nitip"
+          autoComplete="off"
+          value={nitipState[0].nitip}
+          placeholder={nitipPlaceholder.nitip}
+          onChange={handleNitipChange}
         />
-        <button className="nitip-submit" onClick={on} value="">
+        <button type="button" className="nitip-submit" onClick={overlayOn}>
           Nitip dong
         </button>
-      </form>
+      </div>
     </div>
   );
 }
