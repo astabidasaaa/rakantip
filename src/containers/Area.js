@@ -7,7 +7,7 @@ function Area() {
     <div className="page-area" id="page-area">
       <h3>Area Pelayanan</h3>
       <div className="konten area-bandung">
-        <img src={petaBandung} alt="Peta Bandung" />
+        <img className="peta-bandung" src={petaBandung} alt="Peta Bandung" />
         <div className="area-text">
           <h4>Bandung</h4>
           <div className="point">
@@ -27,7 +27,7 @@ function Area() {
         </div>
       </div>
       <div className="konten area-jakarta">
-        <img src={petaJakarta} alt="Peta Jakarta" />
+        <img className="peta-jakarta" src={petaJakarta} alt="Peta Jakarta" />
         <div className="area-text">
           <h4>Jakarta</h4>
           <div className="point">

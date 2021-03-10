@@ -162,6 +162,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   background-color: #fff;
+  -webkit-font-smoothing: subpixel-antialiased;
   // overflow-x: hidden;
 }
 
@@ -467,7 +468,6 @@ body {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  row-gap: 1rem;
 
   @media screen and (max-width: $xs) {
     padding: 2rem 0;
@@ -475,6 +475,7 @@ body {
 
   .jadwal-title {
     text-align: center;
+    margin-bottom: 1rem;
   }
 
   .jadwal-content {
@@ -483,13 +484,13 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    row-gap: 0.8rem;
 
     .countdown {
       display: flex;
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
+      margin-bottom: 0.8rem;
 
       .countdown-text {
         display: flex;
@@ -604,6 +605,10 @@ body {
           align-items: center;
           text-align: center;
           outline: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          opacity: 1;
         }
 
         .reminder-submit:hover {
@@ -672,8 +677,6 @@ body {
       grid:
         "1 2"
         "3 4";
-      column-gap: 0.5rem;
-      row-gap: 0.5rem;
 
       @media screen and (max-width: $sm) {
         display: flex;
@@ -687,6 +690,7 @@ body {
       }
 
       .fav-display {
+        margin: 0.25rem;
         padding: 0.5rem;
         border-radius: 10px;
         box-shadow: 4px 4px 4px #aaa;
@@ -748,13 +752,12 @@ body {
 
         .slick-slide {
           .testimoni-display {
-            // position: relative;
             display: flex !important;
             flex-flow: row nowrap;
             justify-content: flex-start;
             align-items: flex-start;
-            column-gap: 0.5rem;
-            row-gap: 0.5rem;
+            // column-gap: 0.5rem;
+            // row-gap: 0.5rem;
             outline: none;
 
             @media screen and (max-width: $xs) {
@@ -778,6 +781,15 @@ body {
               padding: 0.5rem;
               background-color: $main-green;
               border-radius: 10px;
+
+              &:nth-child(1) {
+                margin-right: 0.5rem;
+
+                @media screen and (max-width: $xs) {
+                  margin-right: 0;
+                  margin-bottom: 0.5rem;
+                }
+              }
 
               .siapa {
                 margin-bottom: 0.5rem;
@@ -832,7 +844,6 @@ body {
         flex-flow: column nowrap;
         justify-content: flex-start;
         align-items: flex-start;
-        row-gap: 0.5rem;
         width: 100%;
 
         .konten {
@@ -840,7 +851,7 @@ body {
           flex-flow: row nowrap;
           justify-content: flex-start;
           align-items: stretch;
-          column-gap: 0.5rem;
+          margin: 0.25rem 0;
           width: 100%;
 
           .bullet {
@@ -852,6 +863,7 @@ body {
             flex-flow: row nowrap;
             justify-content: center;
             align-items: center;
+            margin-right: 0.5rem;
             flex-shrink: 0;
 
             @media screen and (max-width: $xxs) {
@@ -967,17 +979,21 @@ body {
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-  row-gap: 3rem;
   width: 100%;
   padding: 3rem 0;
 
   @media screen and (max-width: $xs) {
     padding: 2rem 0;
     align-items: center;
-    row-gap: 2rem;
   }
 
   h3 {
+    margin-bottom: 3rem;
+
+    @media screen and (max-width: $xs) {
+      margin-bottom: 2rem;
+    }
+
     span {
       color: $main-green;
     }
@@ -987,11 +1003,9 @@ body {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    column-gap: 2rem;
 
     @media screen and (max-width: $sm) {
       flex-flow: column nowrap;
-      row-gap: 2rem;
     }
 
     .point {
@@ -1000,6 +1014,14 @@ body {
       justify-content: center;
       align-items: center;
       width: 13rem;
+
+      &.tepat {
+        margin: 0 3rem;
+
+        @media screen and (max-width: $sm) {
+          margin: 3rem 0;
+        }
+      }
 
       .gambar {
         width: 4rem;
@@ -1040,11 +1062,13 @@ body {
   align-items: center;
   width: 100%;
   padding: 3rem 0;
-  row-gap: 2rem;
+
+  h3 {
+    margin-bottom: 2rem;
+  }
 
   @media screen and (max-width: $xs) {
     padding: 2rem 0;
-    row-gap: 1rem;
   }
 
   .konten {
@@ -1052,14 +1076,33 @@ body {
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
-    column-gap: 2rem;
 
     @media screen and (max-width: $xs) {
       flex-flow: column nowrap;
     }
 
+    &.area-bandung {
+      margin-bottom: 2rem;
+    }
+
     img {
       height: 13rem;
+
+      &.peta-bandung {
+        margin-right: 2rem;
+
+        @media screen and (max-width: $xs) {
+          margin: 0 0 1rem;
+        }
+      }
+
+      &.peta-jakarta {
+        margin-left: 2rem;
+
+        @media screen and (max-width: $xs) {
+          margin: 0 0 1rem;
+        }
+      }
 
       @media screen and (max-width: $xs) {
         height: 9rem;
@@ -1071,14 +1114,16 @@ body {
       flex-flow: column nowrap;
       justify-content: center;
       align-items: flex-start;
-      row-gap: 1.5rem;
+
+      h4 {
+        margin-bottom: 1.5rem;
+      }
 
       .point {
         display: flex;
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: flex-start;
-        column-gap: 1.5rem;
 
         .kiri,
         .kanan {
@@ -1086,11 +1131,15 @@ body {
           flex-flow: column wrap;
           justify-content: flex-start;
           align-items: flex-start;
-          row-gap: 0.5rem;
+        }
+
+        .kanan {
+          margin-left: 1.5rem;
         }
 
         p {
           width: 8rem;
+          margin-bottom: 0.5rem;
 
           @media screen and (max-width: $xs) {
             font-size: 0.8rem;
@@ -1138,7 +1187,6 @@ body {
   padding: 2rem 2rem;
 
   @media screen and (max-width: $xs) {
-    row-gap: 1rem;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
@@ -1149,11 +1197,15 @@ body {
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-    row-gap: 0.5rem;
 
     @media screen and (max-width: $xs) {
+      margin-bottom: 2rem;
       justify-content: center;
       align-items: center;
+    }
+
+    h5 {
+      margin-bottom: 1rem;
     }
 
     .konten {
@@ -1161,21 +1213,20 @@ body {
       flex-flow: row nowrap;
       justify-content: flex-start;
       align-items: flex-start;
-      column-gap: 2rem;
 
-      .kiri {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: flex-start;
-        row-gap: 0.3rem;
-      }
+      .kiri,
       .kanan {
         display: flex;
         flex-flow: column nowrap;
         justify-content: flex-start;
         align-items: flex-start;
-        row-gap: 0.3rem;
+
+        p {
+          margin-bottom: 0.5rem;
+        }
+      }
+      .kanan {
+        margin-left: 2rem;
       }
     }
   }
@@ -1185,11 +1236,15 @@ body {
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-    row-gap: 0.5rem;
 
     @media screen and (max-width: $xs) {
       justify-content: center;
       align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    h5 {
+      margin-bottom: 1rem;
     }
 
     .instagram {
@@ -1197,25 +1252,15 @@ body {
       flex-flow: row nowrap;
       justify-content: flex-start;
       align-items: center;
-      column-gap: 0.5rem;
 
       svg {
         width: 1rem;
         height: 1rem;
+        margin-right: 0.5rem;
       }
       a:hover {
         color: $grey;
       }
-    }
-  }
-
-  @media screen and (max-width: $xs) {
-    .media-sosial::after {
-      content: "";
-      height: 1px;
-      width: 15rem;
-      background-color: $black;
-      margin-top: 1rem;
     }
   }
 
@@ -1224,11 +1269,14 @@ body {
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-end;
-    row-gap: 0.5rem;
 
     @media screen and (max-width: $xs) {
       align-self: center;
       align-items: center;
+    }
+
+    p {
+      margin-bottom: 0.5rem;
     }
 
     a:hover {
@@ -1266,10 +1314,13 @@ body {
     width: 36rem;
     padding: 2rem;
     border-radius: 30px;
-    row-gap: 2rem;
 
     @media screen and (max-width: $xs) {
       width: 90%;
+    }
+
+    h3 {
+      margin: 2rem 0;
     }
 
     .form {
@@ -1277,7 +1328,6 @@ body {
       flex-flow: column nowrap;
       justify-content: flex-start;
       align-items: center;
-      row-gap: 1rem;
       width: 90%;
 
       .pertanyaan {
@@ -1285,11 +1335,16 @@ body {
         flex-flow: column nowrap;
         justify-content: flex-start;
         align-items: flex-start;
-        row-gap: 0.5rem;
         width: 100%;
+        margin-bottom: 1rem;
+
+        &.sub-form {
+          margin: 0.25rem 0;
+        }
 
         label {
           font-family: ubuntu;
+          margin-bottom: 0.5rem;
         }
 
         input {
@@ -1299,6 +1354,7 @@ body {
           align-items: center;
           border: none;
           outline: none;
+          margin-bottom: 0.5rem;
         }
 
         hr {
@@ -1316,7 +1372,7 @@ body {
           justify-content: flex-start;
           align-items: flex-start;
           box-sizing: border-box;
-          row-gap: 0.5rem;
+          margin-bottom: 1rem;
           width: 100%;
           padding: 1rem;
           border: 1px solid $grey;

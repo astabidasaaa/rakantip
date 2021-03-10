@@ -37,13 +37,13 @@ function Form({
             <hr />
           </div>
           <div className="pertanyaan">
-            <p className="p-black">Nitip apa?</p>
+            <label className="p-black">Nitip apa?</label>
             {nitipState.map((val, idx) => {
               const nitipId = `nitip-${idx}`;
               const catatanId = `catatan-${idx}`;
               return (
                 <div key={`nitip-${idx}`} className="nitip-container">
-                  <div className="pertanyaan">
+                  <div className="pertanyaan sub-form">
                     <label className="sub-p-black" htmlFor={nitipId}>{`Nitip #${
                       idx + 1
                     }`}</label>
@@ -63,7 +63,7 @@ function Form({
                     <hr />
                   </div>
 
-                  <div className="pertanyaan">
+                  <div className="pertanyaan sub-form">
                     <label className="sub-p-black" htmlFor={catatanId}>
                       Catatan penitipan
                     </label>
