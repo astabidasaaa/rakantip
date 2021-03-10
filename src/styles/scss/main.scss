@@ -78,7 +78,9 @@ summary,
 time,
 mark,
 audio,
-video {
+video,
+input,
+button {
   margin: 0;
   padding: 0;
   border: 0;
@@ -162,7 +164,8 @@ body {
   box-sizing: border-box;
   width: 100%;
   background-color: #fff;
-  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  text-rendering: geometricPrecision !important;
   // overflow-x: hidden;
 }
 
@@ -756,8 +759,6 @@ body {
             flex-flow: row nowrap;
             justify-content: flex-start;
             align-items: flex-start;
-            // column-gap: 0.5rem;
-            // row-gap: 0.5rem;
             outline: none;
 
             @media screen and (max-width: $xs) {
