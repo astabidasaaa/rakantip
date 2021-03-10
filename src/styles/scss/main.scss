@@ -181,7 +181,9 @@ body {
   padding: 1rem 2rem;
   font-family: ubuntu;
   font-size: 1rem;
+  font-style: normal;
   color: $black;
+  letter-spacing: -0.5px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -228,11 +230,8 @@ body {
       align-items: center;
       outline: none;
       cursor: pointer;
-      font-family: Ubuntu;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 1rem;
-      color: $black;
+      font-weight: 400;
+      letter-spacing: -0.5px;
     }
 
     .menu-btn:hover {
@@ -431,8 +430,9 @@ body {
       border-radius: 0px 20px 20px 0px;
       font-family: Ubuntu;
       font-style: normal;
-      font-weight: 700;
+      font-weight: 500;
       font-size: 1rem;
+      letter-spacing: -0.5px;
       color: $black;
       display: flex;
       flex-flow: row nowrap;
@@ -588,7 +588,9 @@ body {
           font-size: 0.8rem;
           color: $grey;
           display: flex;
-          align-items: center;
+          align-items: flex-end;
+          text-align: left;
+          vertical-align: middle;
           outline: none;
         }
 
@@ -600,8 +602,9 @@ body {
           border-radius: 0px 20px 20px 0px;
           font-family: Ubuntu;
           font-style: normal;
-          font-weight: 700;
+          font-weight: 500;
           font-size: 0.8rem;
+          letter-spacing: -0.5px;
           color: $black;
           display: flex;
           justify-content: center;
@@ -778,8 +781,9 @@ body {
               flex-flow: column nowrap;
               justify-content: flex-start;
               align-items: flex-start;
+              padding: 0.7rem 1rem;
               box-sizing: border-box;
-              padding: 0.5rem;
+
               background-color: $main-green;
               border-radius: 10px;
 
@@ -796,12 +800,10 @@ body {
                 margin-bottom: 0.5rem;
 
                 p:nth-child(1) {
-                  letter-spacing: 0.5px;
                   font-weight: 700;
                 }
 
                 p:nth-child(2) {
-                  letter-spacing: 0.5px;
                   font-weight: 700;
                   color: $light-green;
                 }
@@ -814,7 +816,7 @@ body {
                 flex-flow: column nowrap;
                 justify-content: center;
                 align-items: flex-start;
-                width: 11rem;
+                width: 10rem;
                 height: 2.825rem;
               }
             }
@@ -1465,6 +1467,7 @@ body {
 }
 
 .noscroll {
+  position: relative;
   overflow: hidden;
   padding-right: 1rem;
 
@@ -1486,8 +1489,9 @@ body {
 
 h1,
 .h1 {
-  font: 700 3rem ubuntu;
+  font: 500 3rem ubuntu;
   color: $black;
+  letter-spacing: -2.5px;
 
   @media (max-width: $xxs) {
     font-size: 2.4rem;
@@ -1498,6 +1502,7 @@ h2,
 .h2 {
   font: 700 2.4rem ubuntu;
   color: $black;
+  letter-spacing: -2.5px;
 
   @media (max-width: $xxs) {
     font-size: 2rem;
@@ -1506,8 +1511,9 @@ h2,
 
 h3,
 .h3 {
-  font: 700 2rem ubuntu;
+  font: 500 2rem ubuntu;
   color: $black;
+  letter-spacing: -1.5px;
 
   @media (max-width: $xxs) {
     font-size: 1.6rem;
@@ -1516,8 +1522,9 @@ h3,
 
 h4,
 .h4 {
-  font: 700 1.6rem ubuntu;
+  font: 500 1.6rem ubuntu;
   color: $black;
+  letter-spacing: -1.5px;
 
   @media (max-width: $xxs) {
     font-size: 1.2rem;
@@ -1526,8 +1533,9 @@ h4,
 
 h5,
 .h5 {
-  font: 700 1.2rem ubuntu;
+  font: 500 1.2rem ubuntu;
   color: $black;
+  letter-spacing: -1px;
 
   @media (max-width: $xxs) {
     font-size: 1rem;

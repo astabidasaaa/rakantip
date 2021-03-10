@@ -75,7 +75,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App" id="App">
       <Navbar overlayOn={overlayOn} />
       <div className="container">
         <Form
