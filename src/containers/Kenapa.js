@@ -1,6 +1,3 @@
-import logo from "../assets/img/logo-rakantip-polos-01.png";
-// import "./App.css";
-
 function Kenapa() {
   return (
     <div className="page-kenapa-kami" id="page-kenapa-kami">

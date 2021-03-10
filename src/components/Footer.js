@@ -26,20 +26,20 @@ function Footer() {
             <use xlinkHref="#instagram" />
           </svg>
           <p className="sub-p-black">
-            <a href="#">@rakan.tip</a>
+            <a href="#/">@rakan.tip</a>
           </p>
         </div>
       </div>
       <div className="pranala-luar">
         <p className="sub-p-black">
-          <a href="#">Syarat & Ketentuan</a>
+          <a href="#/">Syarat & Ketentuan</a>
         </p>
         <p className="sub-p-black">
-          <a href="#">Kebijakan Privasi</a>
+          <a href="#/">Kebijakan Privasi</a>
         </p>
         <p className="sub-p-black">Copyright Rakan.tip 2021</p>
         <p className="sub-p-black">
-          Site oleh: <a href="#">Sangkara</a>
+          Site oleh: <a href="#/">Sangkara</a>
         </p>
       </div>
     </div>

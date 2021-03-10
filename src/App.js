@@ -10,7 +10,7 @@ import Area from "./containers/Area";
 import Form from "./containers/Form";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { formState } from "./entry";
 
 function App() {

@@ -5,7 +5,7 @@ import { nitipPlaceholder } from "../entry";
 function Beranda({ overlayOn, nitipState, handleNitipChange }) {
   return (
     <div className="page-utama">
-      <a className="anchor" id="page-utama" href="#"></a>
+      <button className="anchor" id="page-utama" href="#"></button>
       <div className="hero">
         <div className="hero-text">
           <h1>Nitip apapun yang kamu suka</h1>

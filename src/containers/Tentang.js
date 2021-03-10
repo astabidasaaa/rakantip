@@ -5,7 +5,7 @@ import foto from "../assets/img/foto-pegawai.png";
 function Tentang() {
   return (
     <div className="page-tentang-kami">
-      <a className="anchor" id="page-tentang-kami" href="#"></a>
+      <button className="anchor" id="page-tentang-kami" href="#/"></button>
       <h3>Tentang Kami</h3>
       <div className="tentang-perusahaan">
         <img src={logo} alt="Logo rakan.tip" />
