@@ -164,6 +164,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   background-color: #fff;
+  -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: subpixel-antialiased !important;
   text-rendering: geometricPrecision !important;
   // overflow-x: hidden;
@@ -393,7 +394,7 @@ body {
     width: 60%;
     height: 2.5rem;
     border-radius: 20px;
-    box-shadow: 4px 4px 4px #aaa;
+    box-shadow: 2px 2px 5px #aaa;
 
     @media screen and (max-width: $xs) {
       width: 50%;
@@ -1305,7 +1306,8 @@ body {
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
-  overflow-y: scroll;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 
   .form-container {
     display: flex;
@@ -1347,6 +1349,7 @@ body {
 
         label {
           font-family: ubuntu;
+          letter-spacing: -1px;
           margin-bottom: 0.5rem;
         }
 
@@ -1411,8 +1414,9 @@ body {
         border-radius: 50px;
         font-family: Ubuntu;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 500;
         font-size: 1rem;
+        letter-spacing: -1px;
         color: $black;
         display: flex;
         justify-content: center;
