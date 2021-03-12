@@ -1315,6 +1315,7 @@ body {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    position: relative;
     background-color: #fff;
     width: 36rem;
     padding: 2rem;
@@ -1329,6 +1330,7 @@ body {
     }
 
     .form {
+      position: relative;
       display: flex;
       flex-flow: column nowrap;
       justify-content: flex-start;
@@ -1336,6 +1338,7 @@ body {
       width: 90%;
 
       .pertanyaan {
+        position: relative;
         display: flex;
         flex-flow: column nowrap;
         justify-content: flex-start;
@@ -1405,6 +1408,7 @@ body {
       }
 
       .form-submit {
+        position: relative;
         padding: 0 1.5rem;
         width: 100%;
         max-width: 15rem;
@@ -1473,6 +1477,7 @@ body {
 .noscroll {
   position: relative;
   overflow: hidden;
+  height: 100%;
   padding-right: 1rem;
 
   @media screen and (max-width: $sm) {
