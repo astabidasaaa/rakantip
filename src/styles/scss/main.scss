@@ -1306,7 +1306,7 @@ body {
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
-  overflow-y: auto;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 
   .form-container {
@@ -1319,6 +1319,8 @@ body {
     width: 36rem;
     padding: 2rem;
     border-radius: 30px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 
     @media screen and (max-width: $xs) {
       width: 90%;
