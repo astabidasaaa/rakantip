@@ -9,6 +9,14 @@ function Form({
   handleNitipSubmit,
   overlayOff,
 }) {
+  const close = (idx) => {
+    if (idx !== 0) {
+      return <button>AAA</button>;
+    } else {
+      return null;
+    }
+  };
+
   return (
     <div id="overlay">
       <div className="form-container">
@@ -81,6 +89,7 @@ function Form({
                     />
                     <hr />
                   </div>
+                  {close(idx)}
                 </div>
               );
             })}
