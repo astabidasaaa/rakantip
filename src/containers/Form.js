@@ -1,4 +1,5 @@
 import { formPlaceholder, nitipPlaceholder } from "../entry";
+import SubForm from "./SubForm";
 
 function Form({
   yangNitipState,
@@ -6,17 +7,10 @@ function Form({
   nitipState,
   handleNitipChange,
   addNitip,
+  deleteNitip,
   handleNitipSubmit,
   overlayOff,
 }) {
-  const close = (idx) => {
-    if (idx !== 0) {
-      return <button>AAA</button>;
-    } else {
-      return null;
-    }
-  };
-
   return (
     <div id="overlay">
       <div className="form-container">
@@ -46,60 +40,25 @@ function Form({
           </div>
           <div className="pertanyaan">
             <label className="p-black">Nitip apa?</label>
-            {nitipState.map((val, idx) => {
-              const nitipId = `nitip-${idx}`;
-              const catatanId = `catatan-${idx}`;
+            {nitipState.map((item, idx) => {
               return (
-                <div key={`nitip-${idx}`} className="nitip-container">
-                  <div className="pertanyaan sub-form">
-                    <label className="sub-p-black" htmlFor={nitipId}>{`Nitip #${
-                      idx + 1
-                    }`}</label>
-                    <input
-                      type="text"
-                      name={nitipId}
-                      data-idx={idx}
-                      id={nitipId}
-                      className="nitip sub-p-grey"
-                      value={nitipState[idx].nitip}
-                      placeholder={nitipPlaceholder.nitip}
-                      onChange={handleNitipChange}
-                      alt="nitip"
-                      autoComplete="off"
-                      required
-                    />
-                    <hr />
-                  </div>
-
-                  <div className="pertanyaan sub-form">
-                    <label className="sub-p-black" htmlFor={catatanId}>
-                      Catatan penitipan
-                    </label>
-                    <input
-                      type="text"
-                      name={catatanId}
-                      data-idx={idx}
-                      id={catatanId}
-                      className="catatan sub-p-grey"
-                      value={nitipState[idx].catatan}
-                      placeholder={nitipPlaceholder.catatan}
-                      onChange={handleNitipChange}
-                      alt="catatan"
-                      autoComplete="off"
-                    />
-                    <hr />
-                  </div>
-                  {close(idx)}
-                </div>
+                <SubForm
+                  idx={idx}
+                  key={`nitip-${idx}`}
+                  item={item}
+                  nitipPlaceholder={nitipPlaceholder}
+                  handleNitipChange={handleNitipChange}
+                  deleteNitip={deleteNitip}
+                />
               );
             })}
-            <button
+            <div
               className="tambah-nitip sub-p-grey"
               type="button"
               onClick={addNitip}
             >
               + Tambah nitip
-            </button>
+            </div>
           </div>
           <div className="pertanyaan">
             <label htmlFor="kemana" className="p-black">

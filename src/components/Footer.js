@@ -8,14 +8,12 @@ function Footer() {
         <h5>Hubungi Kami</h5>
         <div className="konten">
           <div className="kiri">
-            <p className="sub-p-black">Jalan Buah Batu 123</p>
-            <p className="sub-p-black">Buah Batu</p>
             <p className="sub-p-black">Kota Bandung, Jawa Barat</p>
             <p className="sub-p-black">Indonesia</p>
           </div>
           <div className="kanan">
             <p className="sub-p-black">+6281320790461</p>
-            <p className="sub-p-black">rakan@tip.com</p>
+            <p className="sub-p-black">rakanda_1995@yahoo.com</p>
           </div>
         </div>
       </div>

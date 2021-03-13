@@ -6,7 +6,6 @@ import Informasi from "./containers/Informasi";
 import Tentang from "./containers/Tentang";
 import Kenapa from "./containers/Kenapa";
 import Area from "./containers/Area";
-// import Test from "./containers/Test";
 import Form from "./containers/Form";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -29,6 +28,12 @@ function App() {
     setNitipState([...nitipState, { ...nitipApa }]);
   };
 
+  const deleteNitip = (idx) => {
+    const updatedNitip = nitipState.filter((item, sidx) => idx !== sidx);
+    setNitipState(updatedNitip);
+    // console.log(nitipState);
+  };
+
   const handleNitipChange = (e) => {
     const updatedNitip = [...nitipState];
     updatedNitip[e.target.dataset.idx][e.target.alt] = e.target.value;
@@ -39,15 +44,8 @@ function App() {
     e.preventDefault();
     setYangNitipState(formState);
     setNitipState([{ ...nitipApa }]);
-    alert(
-      "Penitipan telah disubmit oleh: " +
-        yangNitipState.nama +
-        " ke: " +
-        yangNitipState.kemana
-    );
+    alert("Penitipan telah disubmit. Terima kasih sudah menitip!");
     overlayOff();
-    // console.log(yangNitipState);
-    // console.log(nitipState);
   };
 
   const [reminderState, setReminderState] = useState("");
@@ -57,7 +55,6 @@ function App() {
 
   const handleReminderSubmit = (e) => {
     e.preventDefault();
-    // console.log(reminderState);
     setReminderState("");
     alert("Pengingat telah dipasang ke: " + reminderState);
   };
@@ -84,6 +81,7 @@ function App() {
           handleNitipChange={handleNitipChange}
           nitipState={nitipState}
           addNitip={addNitip}
+          deleteNitip={deleteNitip}
           handleNitipSubmit={handleNitipSubmit}
           overlayOff={overlayOff}
         />
@@ -101,7 +99,6 @@ function App() {
         <Tentang />
         <Kenapa />
         <Area />
-        {/* <Test /> */}
       </div>
 
       <Footer />
