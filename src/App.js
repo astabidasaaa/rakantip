@@ -70,8 +70,10 @@ function App() {
 
   const reminderDefault = { email: "" };
   const [reminderState, setReminderState] = useState(reminderDefault);
+
   const handleReminderChange = (e) => {
-    setReminderState(e.target.value);
+    setReminderState({ ...reminderState, email: e.target.value });
+    // console.log(reminderState);
   };
 
   const handleReminderSubmit = (e) => {
