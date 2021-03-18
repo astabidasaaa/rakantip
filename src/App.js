@@ -40,11 +40,27 @@ function App() {
     setNitipState(updatedNitip);
   };
 
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
   const handleNitipSubmit = (e) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "form-nitip", ...yangNitipState }),
+    })
+      .then(() => alert("Success!"))
+      .catch((error) => alert(error));
+
     e.preventDefault();
     setYangNitipState(formState);
     setNitipState([{ ...nitipApa }]);
-    alert("Penitipan telah disubmit. Terima kasih sudah menitip!");
+    // alert("Penitipan telah disubmit. Terima kasih sudah menitip!");
     overlayOff();
   };
 
