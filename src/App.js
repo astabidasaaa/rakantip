@@ -72,7 +72,7 @@ function App() {
   const [reminderState, setReminderState] = useState(reminderDefault);
 
   const handleReminderChange = (e) => {
-    setReminderState({ ...reminderState, email: e.target.value });
+    setReminderState({ email: e.target.value });
     // console.log(reminderState);
   };
 

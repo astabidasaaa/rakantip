@@ -78,7 +78,7 @@ function Form({
             <hr />
           </div>
           <div className="pertanyaan">
-            <label htmlFor="cat-kemana" className="p-black">
+            <label htmlFor="catKemana" className="p-black">
               Catatan pengiriman
             </label>
             <input
