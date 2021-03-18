@@ -87,7 +87,7 @@ function Jadwal({ reminderState, handleReminderChange, handleReminderSubmit }) {
               name="reminder-input"
               className="reminder-input"
               placeholder="masukkan email kamu"
-              value={reminderState}
+              value={reminderState.email}
               onChange={handleReminderChange}
               required
             />
