@@ -52,7 +52,11 @@ function App() {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "form-nitip", ...yangNitipState }),
+      body: encode({
+        "form-name": "form-nitip",
+        ...yangNitipState,
+        ...nitipState,
+      }),
     })
       .then(() => alert("Success!"))
       .catch((error) => alert(error));
@@ -64,15 +68,27 @@ function App() {
     overlayOff();
   };
 
-  const [reminderState, setReminderState] = useState("");
+  const reminderDefault = { email: "" };
+  const [reminderState, setReminderState] = useState(reminderDefault);
   const handleReminderChange = (e) => {
     setReminderState(e.target.value);
   };
 
   const handleReminderSubmit = (e) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "reminder",
+        ...reminderState,
+      }),
+    })
+      .then(() => alert("Success!"))
+      .catch((error) => alert(error));
+
     e.preventDefault();
-    setReminderState("");
-    alert("Pengingat telah dipasang ke: " + reminderState);
+    setReminderState(reminderDefault);
+    // alert("Pengingat telah dipasang ke: " + reminderState);
   };
 
   function overlayOn() {
