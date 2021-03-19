@@ -84,14 +84,16 @@ function Jadwal({ reminderState, handleReminderChange, handleReminderSubmit }) {
             <input
               type="email"
               id="reminder-input"
-              name="reminder-input"
+              name="email"
               className="reminder-input"
               placeholder="masukkan email kamu"
               value={reminderState.email}
               onChange={handleReminderChange}
               required
             />
-            <input type="submit" value="Ingatkan" className="reminder-submit" />
+            <button type="submit" className="reminder-submit">
+              Ingatkan
+            </button>
           </form>
         </div>
       </div>

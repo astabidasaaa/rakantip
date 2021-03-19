@@ -72,7 +72,8 @@ function App() {
   const [reminderState, setReminderState] = useState(reminderDefault);
 
   const handleReminderChange = (e) => {
-    setReminderState({ email: e.target.value });
+    const { name, value } = e.target;
+    setReminderState({ [name]: value });
     // console.log(reminderState);
   };
 
@@ -85,12 +86,11 @@ function App() {
         ...reminderState,
       }),
     })
-      .then(() => alert("Success!"))
+      .then(() => alert(reminderState))
       .catch((error) => alert(error));
 
     e.preventDefault();
     setReminderState(reminderDefault);
-    // alert("Pengingat telah dipasang ke: " + reminderState);
   };
 
   function overlayOn() {
