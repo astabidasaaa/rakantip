@@ -138,7 +138,9 @@ function Informasi() {
                 <p className="sub-p-grey">2</p>
               </div>
               <div className="text">
-                <p className="sub-p-grey">Copy paste link produk favoritmu</p>
+                <p className="sub-p-grey">
+                  Copy paste link produk favoritmu dan isi formulir
+                </p>
               </div>
             </div>
             <div className="konten">

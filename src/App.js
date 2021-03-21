@@ -31,7 +31,6 @@ function App() {
   const deleteNitip = (idx) => {
     const updatedNitip = nitipState.filter((item, sidx) => idx !== sidx);
     setNitipState(updatedNitip);
-    // console.log(nitipState);
   };
 
   const handleNitipChange = (e) => {
@@ -58,12 +57,17 @@ function App() {
         ...nitipState,
       }),
     })
-      .then(() => alert("Success!"))
+      .then(() =>
+        alert("Penitipan telah disubmit. Terima kasih sudah menitip!")
+      )
       .catch((error) => alert(error));
 
     e.preventDefault();
+
     setYangNitipState(formState);
+
     setNitipState([{ ...nitipApa }]);
+
     // alert("Penitipan telah disubmit. Terima kasih sudah menitip!");
     overlayOff();
   };
@@ -74,7 +78,6 @@ function App() {
   const handleReminderChange = (e) => {
     const { name, value } = e.target;
     setReminderState({ [name]: value });
-    // console.log(reminderState);
   };
 
   const handleReminderSubmit = (e) => {
@@ -86,7 +89,7 @@ function App() {
         ...reminderState,
       }),
     })
-      .then(() => alert(reminderState))
+      .then(() => alert("Pengingat telah dipasang!"))
       .catch((error) => alert(error));
 
     e.preventDefault();

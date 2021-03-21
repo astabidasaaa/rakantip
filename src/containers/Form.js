@@ -11,6 +11,20 @@ function Form({
   handleNitipSubmit,
   overlayOff,
 }) {
+  const addBtn = (item) => {
+    if (item <= 7) {
+      return (
+        <div
+          className="tambah-nitip sub-p-grey"
+          type="button"
+          onClick={addNitip}
+        >
+          + Tambah nitip
+        </div>
+      );
+    }
+  };
+
   return (
     <div id="overlay">
       <div className="form-container">
@@ -52,13 +66,7 @@ function Form({
                 />
               );
             })}
-            <div
-              className="tambah-nitip sub-p-grey"
-              type="button"
-              onClick={addNitip}
-            >
-              + Tambah nitip
-            </div>
+            {addBtn(Object.keys(nitipState).length)}
           </div>
           <div className="pertanyaan">
             <label htmlFor="kemana" className="p-black">
