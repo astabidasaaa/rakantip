@@ -1625,18 +1625,27 @@ a {
     text-decoration: none;
     color: $black;
   }
+
   &:visited {
     text-decoration: none;
     color: $black;
   }
+
   &:hover {
     text-decoration: none;
     color: $main-green;
   }
+
+  &:focus {
+    outline: 0.1rem solid $black;
+    outline-offset: 0.3rem;
+  }
+
   &:active {
     text-decoration: none;
     color: $light-green;
   }
+
   &.anchor {
     display: block;
     position: relative;
@@ -1650,4 +1659,12 @@ a {
   position: relative;
   top: -4.5rem;
   visibility: hidden;
+}
+
+button:focus {
+  box-shadow: 0 0 0 0.3rem white, 0 0 0 0.4rem $black;
+}
+
+::-moz-focus-inner {
+  border: 0;
 }
