@@ -1,6 +1,5 @@
 import logo from "../assets/img/logo-rakantip-polos-01.png";
 import { nitipPlaceholder } from "../entry";
-// import "./App.css";
 
 function Beranda({ overlayOn, nitipState, handleNitipChange }) {
   return (

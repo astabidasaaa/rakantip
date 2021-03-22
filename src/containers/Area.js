@@ -1,6 +1,5 @@
 import petaBandung from "../assets/img/peta-bandung.png";
 import petaJakarta from "../assets/img/peta-jakarta.png";
-// import "./App.css";
 
 function Area() {
   return (

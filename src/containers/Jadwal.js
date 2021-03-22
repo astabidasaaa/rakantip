@@ -1,5 +1,3 @@
-// import logo from "../assets/img/logo-rakantip-polos-01.png";
-// import "./App.css";
 import { jadwal } from "../entry";
 
 function Jadwal({ reminderState, handleReminderChange, handleReminderSubmit }) {

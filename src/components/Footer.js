@@ -1,6 +1,3 @@
-// import logo from "../assets/img/logo-rakantip.svg";
-// import "./App.css";
-
 function Footer() {
   return (
     <div className="footer" id="footer">
@@ -24,7 +21,13 @@ function Footer() {
             <use xlinkHref="#instagram" />
           </svg>
           <p className="sub-p-black">
-            <a href="#/">@rakan.tip</a>
+            <a
+              href="https://www.instagram.com/rakan.tip/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @rakan.tip
+            </a>
           </p>
         </div>
       </div>
@@ -37,7 +40,7 @@ function Footer() {
         </p>
         <p className="sub-p-black">Copyright Rakan.tip 2021</p>
         <p className="sub-p-black">
-          Site oleh: <a href="#/">Sangkara</a>
+          Situs oleh: <a href="#/">Sangkara</a>
         </p>
       </div>
     </div>

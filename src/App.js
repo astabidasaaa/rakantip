@@ -31,20 +31,6 @@ function App() {
   const deleteNitip = (idx) => {
     const updatedNitip = nitipState.filter((item, sidx) => idx !== sidx);
     setNitipState(updatedNitip);
-
-    // const test = encode(nitipState.map((item) => encode(item)));
-    // const test2 = nitipState.map((item) => encode(item)).join("&");
-    // const test3 = nitipState.join("&");
-    // const test4 = encode({ ...yangNitipState });
-    // const test5 =
-    //   encode({
-    //     "form-name": "form-nitip",
-    //     ...yangNitipState,
-    //     // test,
-    //   }) +
-    //   "&" +
-    //   test2;
-    // console.log(test5);
   };
 
   const handleNitipChange = (e) => {
