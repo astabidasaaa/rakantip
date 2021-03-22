@@ -5,8 +5,8 @@ function SubForm({
   nitipPlaceholder,
   deleteNitip,
 }) {
-  const nitipId = `nitip-${idx}`;
-  const catatanId = `catatan-${idx}`;
+  const nitipId = `nitip${idx}`;
+  const catatanId = `catatan${idx}`;
   const deleteBtn = (idx) => {
     if (idx !== 0) {
       return (

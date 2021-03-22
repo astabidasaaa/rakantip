@@ -21,7 +21,7 @@ function App() {
       [e.target.name]: [e.target.value],
     });
 
-  const nitipApa = { nitip: "", catatan: "" };
+  const nitipApa = {};
   const [nitipState, setNitipState] = useState([{ ...nitipApa }]);
 
   const addNitip = () => {
@@ -31,11 +31,25 @@ function App() {
   const deleteNitip = (idx) => {
     const updatedNitip = nitipState.filter((item, sidx) => idx !== sidx);
     setNitipState(updatedNitip);
+
+    // const test = encode(nitipState.map((item) => encode(item)));
+    // const test2 = nitipState.map((item) => encode(item)).join("&");
+    // const test3 = nitipState.join("&");
+    // const test4 = encode({ ...yangNitipState });
+    // const test5 =
+    //   encode({
+    //     "form-name": "form-nitip",
+    //     ...yangNitipState,
+    //     // test,
+    //   }) +
+    //   "&" +
+    //   test2;
+    // console.log(test5);
   };
 
   const handleNitipChange = (e) => {
     const updatedNitip = [...nitipState];
-    updatedNitip[e.target.dataset.idx][e.target.alt] = e.target.value;
+    updatedNitip[e.target.dataset.idx][e.target.name] = e.target.value;
     setNitipState(updatedNitip);
   };
 
@@ -51,11 +65,13 @@ function App() {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": "form-nitip",
-        ...yangNitipState,
-        ...nitipState,
-      }),
+      body:
+        encode({
+          "form-name": "form-nitip",
+          ...yangNitipState,
+        }) +
+        "&" +
+        nitipState.map((item) => encode(item)).join("&"),
     })
       .then(() =>
         alert("Penitipan telah disubmit. Terima kasih sudah menitip!")
