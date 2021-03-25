@@ -40,7 +40,7 @@ function Footer() {
         </p>
         <p className="sub-p-black">Copyright Rakan.tip 2021</p>
         <p className="sub-p-black">
-          Situs oleh: <a href="#/">Sangkara</a>
+          Situs oleh: <a href="https://sngkr.netlify.app/">Sangkara</a>
         </p>
       </div>
     </div>
