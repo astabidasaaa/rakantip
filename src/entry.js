@@ -6,8 +6,8 @@ import gambar4 from "./assets/img/dimsum.jpg";
 // format countdown = "mm dd, yyyy hh:mm:ss" english
 // format display = "Senin, 15 Agustus 2020" indonesia
 export const jadwal = {
-  countdown: "march 31, 2021 23:00:00",
-  display: "Rabu, 31 Maret 2021",
+  countdown: "april 30, 2021 23:00:00",
+  display: "Jumat, 30 April 2021",
   dari: "Bandung",
   ke: "Jakarta",
 };
@@ -93,13 +93,15 @@ export const formState = {
 };
 
 export const formPlaceholder = {
-  nama: "ex: Rakanda Pranidhana",
-  kemana: "ex: Jalan Buah Batu 123, Bandung",
-  catKemana: "ex: Depan sekolahan, jangan lewat jl abc karena diportal",
-  ponsel: "ex: 0812345678910",
+  nama: "cth: Rakanda Pranidhana",
+  kemana: "cth: Jalan Buah Batu 123, Bandung",
+  catKemana: "cth: Depan sekolahan, jangan lewat jl abc karena diportal",
+  ponsel: "cth: 0812345678910",
 };
 
 export const nitipPlaceholder = {
-  nitip: "ex: https://www.instagram.com/p/CKu-SddBGtK/",
-  catatan: "ex: Nitip 5 buah, gak pedes, gak pake bakso",
+  nitip: "cth: Primarasa, Hipikicin, Dimsum Arsyif",
+  barang: "cth: kopi hazelnut, dimsum ayam",
+  qty: "cth: 1 box, 5 potong",
+  catatan: "cth: Gak pedes, gak pake bakso, esnya dipisah",
 };

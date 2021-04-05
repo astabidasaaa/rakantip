@@ -21,7 +21,7 @@ function Beranda({ overlayOn, nitipState, handleNitipChange }) {
         <input
           type="text"
           id="nitip-input"
-          name="nitip-0"
+          name="nitip0"
           className="nitip-input"
           data-idx="0"
           alt="nitip"

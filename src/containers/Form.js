@@ -58,15 +58,16 @@ function Form({
               return (
                 <SubForm
                   idx={idx}
-                  key={`nitip-${idx}`}
+                  key={`nitip${idx}`}
                   item={item}
                   nitipPlaceholder={nitipPlaceholder}
+                  nitipState={nitipState}
                   handleNitipChange={handleNitipChange}
                   deleteNitip={deleteNitip}
                 />
               );
             })}
-            {addBtn(Object.keys(nitipState).length)}
+            {addBtn(nitipState.length)}
           </div>
           <div className="pertanyaan">
             <label htmlFor="kemana" className="p-black">
