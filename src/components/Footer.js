@@ -10,7 +10,7 @@ function Footer() {
           </div>
           <div className="kanan">
             <p className="sub-p-black">+6281320790461</p>
-            <p className="sub-p-black">rakanda_1995@yahoo.com</p>
+            <p className="sub-p-black">rakan.tip@gmail.com</p>
           </div>
         </div>
       </div>
