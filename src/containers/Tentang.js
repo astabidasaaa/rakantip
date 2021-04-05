@@ -1,5 +1,5 @@
 import logo from "../assets/img/logo-rakantip.svg";
-import foto from "../assets/img/foto-pegawai.png";
+import foto from "../assets/img/foto-rakanda.jpg";
 
 function Tentang() {
   return (
@@ -29,7 +29,7 @@ function Tentang() {
           <img src={foto} alt="Foto pegawai" />
           <div className="pegawai-text">
             <h5>Rakanda Pranidhana</h5>
-            <p className="p-grey">Bos rakan.tip / kurir / Antek Bappenas</p>
+            <p className="p-grey">Bos rakan.tip / kurir</p>
             <p className="p-black">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

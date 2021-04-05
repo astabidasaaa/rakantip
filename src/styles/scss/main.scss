@@ -962,6 +962,7 @@ body {
       img {
         width: 15rem;
         margin-right: 3rem;
+        border-radius: 10rem;
 
         @media screen and (max-width: $sm) {
           width: 9rem;
